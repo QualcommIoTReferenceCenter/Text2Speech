@@ -49,6 +49,7 @@ if __name__ == '__main__':
         status_frame, frame = cam.read()
         if status_frame == True:
             cv2.imshow('Original', frame)
+
             if key == ord('s'):
                 # converts the image to gray scale
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -64,6 +65,8 @@ if __name__ == '__main__':
                     text_string = trans_text(text_string, args["destination_lang"], args["source_lang"])
                 # says the text out loud
                 speech(text_string, args["destination_lang"])
+                print("----------------------------------")
+                print("\nPress 's' to take a picture of the text image \nOR \npress 'q' to stop the application")
         else:
             # tries to reconnect to the camera if the video feed stops
             while status_frame == False:

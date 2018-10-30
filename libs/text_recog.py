@@ -31,5 +31,6 @@ def text_recog(text_im):
     # the temporary file
     text = pytesseract.image_to_string(Image.open(filename))
     os.remove(filename)
+    print("----------------------------------")
     print(text)
     return text
